@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dashboard | Financial Planner</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h2>Financial Dashboard</h2>
+    <input type="number" id="income" placeholder="Monthly Income (₹)">
+    <input type="number" id="goal" placeholder="Savings Goal (₹)">
+    <select id="expenseDropdown">
+      <option value="Food">🍔 Food</option>
+      <option value="Groceries">🛒 Groceries</option>
+      <option value="Healthcare">🏥 Healthcare</option>
+      <option value="Transport">🚌 Transport</option>
+      <option value="Rent">🏠 Rent</option>
+      <option value="Utilities">💡 Utilities</option>
+      <option value="Entertainment">🎮 Entertainment</option>
+      <option value="Others">📦 Others</option>
+    </select>
+    <input type="text" id="customExpense" placeholder="Or enter custom expense name">
+    <input type="number" id="expenseAmount" placeholder="Expense Amount (₹)">
+    <button onclick="addExpense()">Add Expense</button>
+
+    <ul id="expenseList"></ul>
+    <div id="suggestion"></div>
+    <canvas id="chart" width="300" height="300"></canvas>
+
+    <button onclick="generateSuggestion()">Generate Suggestion</button>
+    <button onclick="downloadReport()">Download Report</button>
+    <button onclick="saveReportLocally()">Save Report</button>
+    <button onclick="loadSavedReport()">Load Report</button>
+    <button onclick="window.location.href='tips.html'">Daily Tips</button>
+    <button class="logout-btn" onclick="logout()">Logout</button>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
